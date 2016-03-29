@@ -51,4 +51,6 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
 
+//    https://auth.firebase.com/v2/<YOUR-FIREBASE-APP>/auth/facebook/callback
+
 }
