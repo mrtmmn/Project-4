@@ -13,13 +13,13 @@ public class ImageAdapter extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.homiestwo, R.drawable.homies,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo, R.drawable.homiestwo,
-            R.drawable.homiestwo
+            R.drawable.homies, R.drawable.homiestwo,
+            R.drawable.homiestwo, R.drawable.homies,
+            R.drawable.homies, R.drawable.homiestwo,
+            R.drawable.homiestwo, R.drawable.homies,
+            R.drawable.homies, R.drawable.homiestwo,
+            R.drawable.homiestwo, R.drawable.homies,
+            R.drawable.homies
     };
 
     // Constructor

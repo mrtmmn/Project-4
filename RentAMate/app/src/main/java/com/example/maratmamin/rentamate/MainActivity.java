@@ -22,7 +22,6 @@ import com.firebase.ui.auth.core.FirebaseLoginError;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    Firebase mRef = new Firebase(getResources().getString(R.string.firebase_url));
     String logIn = null;
 
     @Override
