@@ -3,9 +3,25 @@
     <string name="firebase_url">https://marat-mamin.firebaseio.com</string>
     <string name="facebook_app_id">239539026393925</string>
     <string name="facebook_app_secret">621862b7e03517abc7c8feaaf46a435d</string>
-    <string name="twitter_app_key">[VALUE]</string>
-    <string name="twitter_app_secret">[VALUE]</string>
+    <string name="twitter_app_key">SNPNAzz3SnQulZoGH8WuqHXec</string>
+    <string name="twitter_app_secret">jP5YuSE61PBMatrIRpjo5RXByRzAvWzOKnFB50HyFRm619QnDE</string>
 
     <string name="username">Username</string>
     <string name="password">Password</string>
+
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="sign_up_button_label">Sign Up</string>
+    <string name="signup_error_message">Please make sure you enter an email address and password!</string>
+    <string name="signup_error_title">Error!</string>
+    <string name="signup_success">Account successfully created! You can now Login.</string>
+    <string name="login_error_message">Please make sure you enter an email address and password!</string>
+    <string name="login_error_title">Error!</string>
+    <string name="login_button_label">Login</string>
+    <string name="sign_up_text">Sign Up!</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="add_item">Add New Item</string>
+    <string name="action_logout">Logout</string>
+
+
 </resources>
