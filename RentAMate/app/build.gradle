@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.example.maratmamin.rentamate"
+        applicationId "is.great.maratmamin.rentamate"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -34,4 +34,5 @@ dependencies {
     compile 'org.twitter4j:twitter4j-core:4.0.2'
     compile 'com.firebaseui:firebase-ui:0.3.1'
     compile 'com.firebase:firebase-simple-login:1.4.2'
+    compile 'com.squareup.picasso:picasso:2.3.3'
 }

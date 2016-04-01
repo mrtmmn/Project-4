@@ -1,4 +1,4 @@
-package com.example.maratmamin.rentamate;
+package com.great.maratmamin.rentamate;
 
 import org.junit.Test;
 

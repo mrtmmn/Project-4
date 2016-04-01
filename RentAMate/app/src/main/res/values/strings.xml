@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RentAMate</string>
+    <string name="app_name">homies</string>
     <string name="firebase_url">https://marat-mamin.firebaseio.com</string>
     <string name="facebook_app_id">239539026393925</string>
     <string name="facebook_app_secret">621862b7e03517abc7c8feaaf46a435d</string>

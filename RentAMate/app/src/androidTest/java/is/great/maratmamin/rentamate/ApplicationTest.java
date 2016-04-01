@@ -1,4 +1,4 @@
-package com.example.maratmamin.rentamate;
+package is.great.maratmamin.rentamate;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
