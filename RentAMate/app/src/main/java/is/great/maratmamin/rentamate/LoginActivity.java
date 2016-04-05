@@ -48,7 +48,7 @@ public class LoginActivity extends FirebaseLoginBaseActivity{
 //    protected EditText emailEditText;
 //    protected EditText passwordEditText;
 //    protected Button loginButton;
-//    protected TextView signUpTextView;
+    protected TextView signUpTextView;
 //
 //    protected LoginButton facebookLB;
 //    protected CallbackManager callbackManager;
@@ -61,7 +61,7 @@ public class LoginActivity extends FirebaseLoginBaseActivity{
 //
 //        final Firebase ref = new Firebase("https://marat-mamin.firebaseio.com/");
 //
-//        signUpTextView = (TextView)findViewById(R.id.signUpText);
+        signUpTextView = (TextView)findViewById(R.id.signUpText);
 //        emailEditText = (EditText)findViewById(R.id.emailField);
 //        passwordEditText = (EditText)findViewById(R.id.passwordField);
 //        loginButton = (Button)findViewById(R.id.loginButton);
@@ -123,13 +123,13 @@ public class LoginActivity extends FirebaseLoginBaseActivity{
 //                    }
 //                }).executeAsync();
 //
-//        signUpTextView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        signUpTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
 //
 //        loginButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -213,7 +213,7 @@ public class LoginActivity extends FirebaseLoginBaseActivity{
         mRef.child("users").child(authData.getUid()).setValue(map);
 
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        intent.putExtra("picture", authData.getUid());
+        intent.putExtra("picture", String.valueOf(map.get("cachedUserProfile")));
         //or make static class separately
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

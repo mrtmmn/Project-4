@@ -16,7 +16,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.firebase.client.AuthData;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.firebase.ui.FirebaseListAdapter;
 import com.firebase.ui.auth.core.AuthProviderType;
 import com.firebase.ui.auth.core.FirebaseLoginBaseActivity;
@@ -24,12 +27,14 @@ import com.firebase.ui.auth.core.FirebaseLoginError;
 import com.great.maratmamin.rentamate.R;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     private Firebase mRef = new Firebase("https://marat-mamin.firebaseio.com/");
-    private User mUser;
+    private Firebase mRefUser = mRef.child("users");
+    private ArrayList<User> userList = new ArrayList<User>();
     private ImageButton mImageButton;
     private ImageAdapter mImageAdapter;
 
@@ -57,10 +62,36 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
 
         // Instance of ImageAdapter Class
-        mImageAdapter = new ImageAdapter(this, );
+        mImageAdapter = new ImageAdapter(this, userList);
         gridView.setAdapter(mImageAdapter);
 
+        mRefUser.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                userList.add(dataSnapshot.getValue(User.class));
 
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
         /**
          * On Click event for Single Gridview Item
@@ -73,7 +104,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 // Sending image id to FullScreenActivity
                 Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
                 // passing array index
-                i.putExtra("id", position);
+//                i.putExtra("id", position);
+                User userPassed = (User)mImageAdapter.getItem(position);
+                i.putExtra("passed", userPassed);
                 startActivity(i);
             }
         });

@@ -14,7 +14,8 @@
         android:verticalSpacing="10dp"
         android:stretchMode="columnWidth"
         android:columnWidth="135dp"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:paddingTop="20dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"

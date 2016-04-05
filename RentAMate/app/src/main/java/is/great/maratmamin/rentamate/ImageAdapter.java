@@ -43,11 +43,18 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView = new ImageView(mContext);
         imageView.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));
-        Picasso.with(mContext)
-                .load(mUserArrayList.get(position).getProfPic())
-                .placeholder(R.drawable.homiesliving_blackandwhite_stonehouse)
-                .error(R.drawable.homies)
-                .into(imageView);
+        if (mUserArrayList.get(position).getProfileImageURL().contains("https://secure.gravatar.com/avatar")) {
+            Picasso.with(mContext)
+                    .load(R.drawable.homies)
+                    .into(imageView);
+        }
+        else {
+            Picasso.with(mContext)
+                    .load(mUserArrayList.get(position).getProfileImageURL())
+                    .placeholder(R.drawable.homiesliving_blackandwhite_stonehouse)
+                    .error(R.drawable.homies)
+                    .into(imageView);
+        }
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         return imageView;
     }
